@@ -35,7 +35,7 @@
 ## Install
 
 ```bash
-npm install git+https://github.com:dnldsht/navigation-bar.git
+npm install git+https://github.com/dnldsht/navigation-bar.git
 npx cap sync
 ```
 
