@@ -29,6 +29,11 @@ public class NavigationBarPlugin extends Plugin {
             WindowInsetsControllerCompat windowInsetsControllerCompat = WindowCompat.getInsetsController(window, window.getDecorView());
             windowInsetsControllerCompat.hide(WindowInsetsCompat.Type.navigationBars());
 
+            // keep the navbar hidden when tapping/swiping the screen
+            windowInsetsControllerCompat.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            );
+
             window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
             notifyListeners("onHide", new JSObject());
             call.resolve();
