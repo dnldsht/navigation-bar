@@ -35,7 +35,7 @@
 ## Install
 
 ```bash
-npm install @hugotomazi/capacitor-navigation-bar
+npm install git+https://github.com:dnldsht/navigation-bar.git
 npx cap sync
 ```
 
@@ -52,9 +52,9 @@ No configuration required for this plugin.
 * [`setColor(...)`](#setcolor)
 * [`setTransparency(...)`](#settransparency)
 * [`getColor()`](#getcolor)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
+* [`addListener(NavigationBarPluginEvents.SHOW, ...)`](#addlistenernavigationbarplugineventsshow)
+* [`addListener(NavigationBarPluginEvents.HIDE, ...)`](#addlistenernavigationbarplugineventshide)
+* [`addListener(NavigationBarPluginEvents.COLOR_CHANGE, ...)`](#addlistenernavigationbarplugineventscolor_change)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
@@ -129,7 +129,7 @@ Gets the current color of the navigation bar in Hexadecimal.
 --------------------
 
 
-### addListener(...)
+### addListener(NavigationBarPluginEvents.SHOW, ...)
 
 ```typescript
 addListener(event: NavigationBarPluginEvents.SHOW, listenerFunc: () => void) => Promise<PluginListenerHandle>
@@ -147,7 +147,7 @@ Event fired after navigation bar is displayed
 --------------------
 
 
-### addListener(...)
+### addListener(NavigationBarPluginEvents.HIDE, ...)
 
 ```typescript
 addListener(event: NavigationBarPluginEvents.HIDE, listenerFunc: () => void) => Promise<PluginListenerHandle>
@@ -165,7 +165,7 @@ Event fired after navigation bar is hidden
 --------------------
 
 
-### addListener(...)
+### addListener(NavigationBarPluginEvents.COLOR_CHANGE, ...)
 
 ```typescript
 addListener(event: NavigationBarPluginEvents.COLOR_CHANGE, listenerFunc: (returnObject: { color: string; }) => void) => Promise<PluginListenerHandle>
